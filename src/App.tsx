@@ -6,7 +6,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home name={'pedro'} age={31} />} />
       </Routes>
     </BrowserRouter>
   );
