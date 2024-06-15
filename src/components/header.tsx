@@ -30,11 +30,11 @@ const Header = () => {
         </Link>
       )}
 
-      <nav className=' flex items-center justify-between w-1/6'>
+      <nav className=' flex items-center justify-between w-1/4'>
         <button>
           <BiBell size={20} color='gray' />
         </button>
-        <button className=' rounded-full bg bg-[#4bbdff] p-2'>
+        <button className=' rounded-full  bg-[#4bbdff] p-2'>
           <GoPerson size={20} color='white' />
         </button>
       </nav>
