@@ -26,8 +26,18 @@ const Clients = () => {
       if (data) setListOfClient(data);
     };
 
-    fetchAllClients();
-  }, []);
+    const fetchClientByName = async () => {
+      const response = await fetch(
+        `http://localhost:2323/clinic/client/${isClient}`
+      );
+      const data = await response.json();
+
+      console.log(data);
+      if (data) setListOfClient(data);
+    };
+
+    isClient && isClient.length > 5 ? fetchClientByName() : fetchAllClients();
+  }, [isClient]);
 
   return (
     <main className=' w-full mt-3 px-5 h-full'>
@@ -42,7 +52,7 @@ const Clients = () => {
       </div>
 
       <section className=' w-full max-h-[500px] overflow-y-auto flex flex-col gap-2 mt-5'>
-        {isListOfClient
+        {isListOfClient && isListOfClient.length > 0
           ? isListOfClient.map((client: Clients) => (
               <div
                 className=' rounded border p-3 flex flex-col gap-3'
